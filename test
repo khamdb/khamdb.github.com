@@ -1,0 +1,26 @@
+jwplayer("player0000ror").setup(
+    {
+        playlist: [
+            {
+                image: "http://stream.gravlab.net/003119/sparse/v1d30/pages/move/928x522-sunburst-for-896x504-player.jpg",
+                sources: [
+                    {file: "http://stream.gravlab.net/003119/sparse/v1d30/pages/move/move.m3u8"},
+                    {file: "http://stream.gravlab.net/003119/sparse/v1d30/pages/m0v3.mp4"},
+                    {file: "http://stream.gravlab.net/003119/sparse/v1d30/pages/m0v3.webm"}
+                ]
+            }
+        ],
+        skin: "http://img.gravlab.com/003119/6-7/sk1nz/vapor.xml",
+        width: "640",
+        height: "360",
+        primary: "flash",
+        logo: {
+            file: "http://img.gravlab.com/003119/playerassets/jwp6/201305transparentlogo.png",
+            link: "http://gravlab.com/about.html",
+            position: "top-right",
+            hide: "true"
+        },
+        ga: {},
+        abouttext: "2013 / 2014 Gravitylab: Click here and learn More",
+        aboutlink: "http://gravlab.com/standard.html"
+    });
