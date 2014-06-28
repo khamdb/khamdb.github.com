@@ -16,11 +16,39 @@
 
    <!-- include flowplayer -->
    <script type="text/javascript" src="flowplayer.min.js"></script>
-
+   
+   <script type='text/javascript'>
+      var googletag = googletag || {};
+         googletag.cmd = googletag.cmd || [];
+         (function() {
+         var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + 
+            '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+         })();
+   </script>
+   
+   <script type='text/javascript'>
+      googletag.cmd.push(function() {
+         googletag.defineSlot('/59203851/400x300', [336, 280], 'div-gpt-ad-1403940775101-0').addService(googletag.companionAds()).addService(googletag.pubads());
+         googletag.companionAds().setRefreshUnfilledSlots(true);
+         googletag.pubads().enableVideoAds();
+         googletag.enableServices();
+      });
+   </script>
 </head>
 
 <body>
-
+   <!-- 400x300 -->
+   <div id='div-gpt-ad-1403940775101-0' style='width:336px; height:280px;'>
+      <script type='text/javascript'>
+         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1403940775101-0'); });
+      </script>
+   </div>
    <!-- the player -->
    <div class="flowplayer" data-swf="flowplayer.swf" data-ratio="0.4167">
       <video>
