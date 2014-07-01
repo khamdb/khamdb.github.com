@@ -211,7 +211,7 @@ var OVA_RTMP_BASE_URL = "rtmp://ne7c0nwbit.rtmphost.com/videoplayer";
 var OVA_PSEUDO_BASE_URL = "http://streaming.openvideoads.org:81/shows";
 
 // Specific streams
-
+var OVA_HTTP_DFP_XML = "http://khamdb.github.io/ova.flowplayer/data/dfp.xml";
 var OVA_HTTP_SHOW_STREAM_1 = "http://khamdb.github.io/ova.flowplayer/data/demo.mp4";
 var OVA_PSEUDO_SHOW_STREAM_1 = "http://streaming.openvideoads.org:81/shows/the-black-hole.mp4";
 var OVA_RTMP_SHOW_STREAM_1 = "rtmp://ne7c0nwbit.rtmphost.com/videoplayer/mp4:the-black-hole.mp4";
