@@ -212,7 +212,7 @@ var OVA_PSEUDO_BASE_URL = "http://streaming.openvideoads.org:81/shows";
 
 // Specific streams
 
-var OVA_HTTP_SHOW_STREAM_1 = "http://localhost:8080/ova.flowplayer/data/demo.mp4";
+var OVA_HTTP_SHOW_STREAM_1 = "http://khamdb.github.io/ova.flowplayer/data/demo.mp4";
 var OVA_PSEUDO_SHOW_STREAM_1 = "http://streaming.openvideoads.org:81/shows/the-black-hole.mp4";
 var OVA_RTMP_SHOW_STREAM_1 = "rtmp://ne7c0nwbit.rtmphost.com/videoplayer/mp4:the-black-hole.mp4";
 var OVA_PSEUDO_BUNNY_STREAM = "http://streaming.openvideoads.org:81/shows/bbb-640x360.mp4"
@@ -294,7 +294,7 @@ var OVA_VAST_VPAID_OVERLAY_TRACKING = OVA_DIST_TEMPLATES_3 + "vpaid/vast2-vpaid1
 var OVA_VAST_CLOSE_TRACKING = OVA_DIST_TEMPLATES_2 + "skip-ad/vast1.xml"
 
 if(IN_TEST_MODE) { // in test mode - used during development - leave false for production
-	OVA_OAS_URL = 'http://localhost:8080/ova.flowplayer/dist/swf/ova.swf';
+	OVA_OAS_URL = 'http://khamdb.github.io/ova.flowplayer/dist/swf/ova.swf';
 	OVA_OAS_URL_2 = OVA_OAS_URL;
     OVA_OAS_DEBUG = 'fatal, config, vast_template';
 }
