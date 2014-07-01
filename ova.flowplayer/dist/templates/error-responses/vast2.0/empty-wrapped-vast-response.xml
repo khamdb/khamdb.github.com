@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VAST version="2.0">
+  <Ad id="AdForm">
+    <Wrapper>
+      <AdSystem>AdForm</AdSystem>
+      <VASTAdTagURI><![CDATA[http://static.openvideoads.org/tests/empty-vast-tags.xml]]></VASTAdTagURI>
+      <Impression>http://localhost/vast2-wrapper-impression</Impression>
+      <Creatives>
+         <Creative>
+         </Creative>
+      </Creatives>
+    </Wrapper>
+  </Ad>
+</VAST>
