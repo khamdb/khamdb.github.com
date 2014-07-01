@@ -1,148 +1,106 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Example 2 (HTTP) - A pre-roll ad with a show stream</title>
-    <script type="text/javascript" src="../../../dist/js/jquery-1.3.1.js"></script>
-    <script type='text/javascript'>
-        var googletag = googletag || {};
-        googletag.cmd = googletag.cmd || [];
-        (function() {
-            var gads = document.createElement('script');
-            gads.async = true;
-            gads.type = 'text/javascript';
-            var useSSL = 'https:' == document.location.protocol;
-            gads.src = (useSSL ? 'https:' : 'http:') +
-                    '//www.googletagservices.com/tag/js/gpt.js';
-            var node = document.getElementsByTagName('script')[0];
-            node.parentNode.insertBefore(gads, node);
-        })();
-    </script>
-
-    <script type='text/javascript'>
-        googletag.cmd.push(function() {
-            googletag.defineSlot('/59203851/400x300', [336, 280], 'div-gpt-ad-1404216759508-0').addService(googletag.companionAds());
-            googletag.pubads().enableVideoAds();
-            googletag.enableServices();
-        });
-    </script>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Example 2 (HTTP) - A pre-roll ad with a show stream</title>
+<script type="text/javascript" src="../../../dist/js/jquery-1.3.1.js"></script>
 </head>
 <body>
 <script type="text/javascript" src="../../../dist/js/flowplayer.min.js"></script>
 <script type="text/javascript" src="../../../dist/js/ova-examples.js"></script>
 <style type="text/css">
-    <!--
-    @import url(../../../dist/css/global.css);
-    -->
+<!--
+  @import url(../../../dist/css/global.css);
+-->
 </style>
 <h2>Example 2 (HTTP) - A pre-roll ad with a show stream</h2>
 <br/>
 <a class="example"></a>
 
 <script type="text/javascript">
-    flowplayer("a.example", FP_SWF, {
-        plugins: {
-            controls: {
-                autoHide: "always"
-            },
+flowplayer("a.example", FP_SWF, {
+    plugins: {
+        controls: {
+            autoHide: "always"
+        },
 
-            ova: {
-                url: OVA_OAS_URL,
+        ova: {
+          url: OVA_OAS_URL,
 
-                "shows": {
-                    "streams": [
-                        { "file": OVA_HTTP_SHOW_STREAM_1 }
-                    ]/*, "duration":"00:00:30"*/
-                },
+          "shows": {
+              "streams": [ { "file":OVA_HTTP_SHOW_STREAM_1, "duration":"00:00:30" } ]
+          },
 
-                "debug": {
-                    "levels": OVA_OAS_DEBUG
-                },
+      "debug": {
+              "levels": OVA_OAS_DEBUG
+      },
 
-                "ads": {
-                    "playOnce": false,
-                    "servers": [
-                        {
-                            "type": "DFP",
-                            "apiAddress": 'http://pubads.g.doubleclick.net/gampad/ads?sz=400x300&iu=/59203851/400x300&ciu_szs=336x280&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]'
-                        }
-                    ],
-                    "schedule": [
-                        {
-                            "zone": "5",
-                            "position": "pre-roll"
-                        }
-                    ]
+        "ads": {
+            "playOnce": false,
+              "servers": [
+                   {
+                      "type": "OpenX",
+                      "apiAddress": OVA_OPENX_API,
+                   }
+              ],
+            "schedule": [
+                {
+                   "zone": "5",
+                   "position": "pre-roll"
                 }
-            }
+            ]
+      }
         }
-    });
+    }
+});
 </script>
 <br/>
-<!-- 400x300 -->
-<div id='div-gpt-ad-1404216759508-0' style='width:336px; height:280px;'>
-    <script type='text/javascript'>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1404216759508-0'); });
-    </script>
-</div>
 <p>
-    The configuration for this example is:
+The configuration for this example is:
 </p>
-
 <div class="codebox">
 <pre>
 <code class="javascript">
-    flowplayer("a.example", "
-    <script type="text/javascript">document.write(FP_SWF)</script>
-    ", {
+flowplayer("a.example", "<script type="text/javascript">document.write(FP_SWF)</script>", {
     plugins: {
-    controls: {
-    autoHide: "always"
-    },
+        controls: {
+            autoHide: "always"
+        },
 
-    ova: {
-    url: "
-    <script type="text/javascript">document.write(OVA_OAS_URL)</script>
-    ",
+        ova: {
+            url: "<script type="text/javascript">document.write(OVA_OAS_URL)</script>",
 
-    "shows": {
-    "streams": [
-    {
-    "file": "
-    <script type="text/javascript">document.write(OVA_HTTP_SHOW_STREAM_1)</script>
-    ",
-    "duration":"00:00:30"
-    }
-    ]
-    },
+            "shows": {
+                "streams": [
+                    {
+                        "file": "<script type="text/javascript">document.write(OVA_HTTP_SHOW_STREAM_1)</script>",
+                        "duration":"00:00:30"
+                    }
+                ]
+            },
 
-    "debug": {
-    "levels": "
-    <script type="text/javascript">document.write(OVA_OAS_DEBUG)</script>
-    ",
-    },
+            "debug": {
+                "levels": "<script type="text/javascript">document.write(OVA_OAS_DEBUG)</script>",
+            },
 
-    "ads": {
-    "playOnce": false,
-    "servers": [
-    {
-    "type": "OpenX",
-    "apiAddress": "
-    <script type="text/javascript">document.write(OVA_OPENX_API)</script>
-    ",
+            "ads": {
+                "playOnce": false,
+                "servers": [
+                    {
+                       "type": "OpenX",
+                       "apiAddress": "<script type="text/javascript">document.write(OVA_OPENX_API)</script>",
+                    }
+                ],
+                "schedule": [
+                    {
+                       "zone": "5",
+                       "position": "pre-roll"
+                    }
+                ]
+            }
+        }
     }
-    ],
-    "schedule": [
-    {
-    "zone": "5",
-    "position": "pre-roll"
-    }
-    ]
-    }
-    }
-    }
-    });
+});
 </code>
 </pre>
 </div>
