@@ -117,8 +117,11 @@ FB.api(
 				
 				$.ajax({
 				    url: url_request,
+				    headers: {
+				        'Accept': '*/*',
+				        'Content-Type': 'application/x-javascript; charset=utf-8'
+				    },
 				    crossDomain: true,
-				    contentType: "text/plain",
 				    // Work with the response
 				    success: function( response ) {
 				        console.log( response ); // server response
