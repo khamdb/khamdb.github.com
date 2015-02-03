@@ -56,6 +56,12 @@
 			  version    : 'v2.1'
 			});
 
+FB.api(
+    "/me",
+    function (response) {
+      console.log(response);
+    }
+);
 	//Additional initialization code here 
         FB.Event.subscribe('edge.create',
             function (response) {
