@@ -53,6 +53,27 @@
 			  version    : 'v2.1'
 			});
 
+			FB.Event.subscribe('auth.login', function(response) {
+				// do something with response
+				console.log(response)
+			});
+
+			FB.Event.subscribe('auth.authResponseChanged', function(response) {
+				// do something with response
+				console.log(response)
+			});
+			
+			FB.Event.subscribe('auth.statusChange', function(response) {
+				// do something with response
+				console.log(response)
+			});
+			
+			
+			FB.Event.subscribe('auth.logout', function(response) {
+				// do something with response
+				console.log(response)
+			});
+				
 			FB.getLoginStatus(function(response) {
 			  if (response.status === 'connected') {
 				// the user is logged in and has authenticated your
@@ -71,27 +92,6 @@
 			  } else {
 				// the user isn't logged in to Facebook.
 				console.log('logged');
-				
-				FB.Event.subscribe('auth.login', function(response) {
-					// do something with response
-					console.log(response)
-				});
-
-				FB.Event.subscribe('auth.authResponseChanged', function(response) {
-					// do something with response
-					console.log(response)
-				});
-				
-				FB.Event.subscribe('auth.statusChange', function(response) {
-					// do something with response
-					console.log(response)
-				});
-				
-				
-				FB.Event.subscribe('auth.logout', function(response) {
-					// do something with response
-					console.log(response)
-				});
 			  }
 			 });
 		  };
