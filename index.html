@@ -60,14 +60,14 @@
         FB.Event.subscribe('edge.create',
                     function (response) {
                         //console.log('edge.create');
-                        console.log('edge.create');
+                        console.log('edge.create', response);
                     }
              );
 
         FB.Event.subscribe('xfbml.render',
                 function (response) {
                     //console.log('xfbml.render');
-                    console.log('xfbml.render');
+                    console.log('xfbml.render', response);
                 }
              );
              
