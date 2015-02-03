@@ -106,7 +106,8 @@
 			  } else if (response.status === 'not_authorized') {
 				// the user is logged in to Facebook, 
 				// but has not authenticated your app
-				console.log('not authenticated', response);
+				console.log('not authenticated', response, $('.fb-comments'));
+				$('.fb-comments')
 			  } else {
 				// the user isn't logged in to Facebook.
 				console.log('logged');
