@@ -53,8 +53,6 @@
 			  version    : 'v2.1'
 			});
 			
-			
-			
 			FB.getLoginStatus(function(response) {
 			  if (response.status === 'connected') {
 				// the user is logged in and has authenticated your
@@ -98,13 +96,13 @@
 			 });
 		  };
 
-	  	(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&appId=420480018094838&version=v2.0";
-			  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
+	  	(function(d, s, id){
+			 var js, fjs = d.getElementsByTagName(s)[0];
+			 if (d.getElementById(id)) {return;}
+			 js = d.createElement(s); js.id = id;
+			 js.src = "//connect.facebook.net/vi_VN/sdk.js";
+			 fjs.parentNode.insertBefore(js, fjs);
+	   	}(document, 'script', 'facebook-jssdk'));
 		</script>
   </head>
   <body>
