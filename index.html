@@ -117,8 +117,9 @@ FB.api(
 				
 				$.ajax({
 				    url: url_request,
+				    crossDomain: true,
 				    // Tell jQuery we're expecting JSONP
-				    dataType: "jsonp",
+				    contentType: "text/plain",
 				    // Work with the response
 				    success: function( response ) {
 				        console.log( response ); // server response
