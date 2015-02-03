@@ -55,23 +55,23 @@
 
 			FB.Event.subscribe('auth.login', function(response) {
 				// do something with response
-				console.log(response)
+				console.log('auth.login', response)
 			});
 
 			FB.Event.subscribe('auth.authResponseChanged', function(response) {
 				// do something with response
-				console.log(response)
+				console.log('auth.authResponseChanged', response)
 			});
 			
 			FB.Event.subscribe('auth.statusChange', function(response) {
 				// do something with response
-				console.log(response)
+				console.log('auth.statusChange', response)
 			});
 			
 			
 			FB.Event.subscribe('auth.logout', function(response) {
 				// do something with response
-				console.log(response)
+				console.log('auth.logout', response)
 			});
 				
 			FB.getLoginStatus(function(response) {
