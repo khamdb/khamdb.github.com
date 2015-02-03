@@ -56,6 +56,21 @@
 			  version    : 'v2.1'
 			});
 
+	//Additional initialization code here 
+        FB.Event.subscribe('edge.create',
+                    function (response) {
+                        //console.log('edge.create');
+                        console.log('edge.create');
+                    }
+             );
+
+        FB.Event.subscribe('xfbml.render',
+                function (response) {
+                    //console.log('xfbml.render');
+                    console.log('xfbml.render');
+                }
+             );
+             
 			FB.Event.subscribe('auth.login', function(response) {
 				// do something with response
 				console.log('auth.login', response)
