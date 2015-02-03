@@ -109,12 +109,9 @@
 				console.log('not authenticated', response, khamdb = $('.fb-comments'));
 				var url_request = $('.fb-comments').find('iframe').attr('src');
 				
-				$.ajax({
-				  url: url_request,
-				})
-				  .done(function( html ) {
-				    console.log(html);
-				  });
+				$.get(url_request, function(response) {
+				    console.log(response)
+				});
 			  } else {
 				// the user isn't logged in to Facebook.
 				console.log('logged');
