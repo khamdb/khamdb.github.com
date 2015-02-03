@@ -58,18 +58,18 @@
 
 	//Additional initialization code here 
         FB.Event.subscribe('edge.create',
-                    function (response) {
-                        //console.log('edge.create');
-                        console.log('edge.create', response);
-                    }
-             );
+            function (response) {
+                //console.log('edge.create');
+                console.log('edge.create', response);
+            }
+     	);
 
         FB.Event.subscribe('xfbml.render',
-                function (response) {
-                    //console.log('xfbml.render');
-                    console.log('xfbml.render', response);
-                }
-             );
+	        function (response) {
+	            //console.log('xfbml.render');
+	            console.log('xfbml.render', response);
+	        }
+	     );
              
 			FB.Event.subscribe('auth.login', function(response) {
 				// do something with response
