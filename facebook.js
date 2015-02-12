@@ -1,0 +1,93 @@
+<script>
+		  window.fbAsyncInit = function() {
+			FB.init({
+			  appId      : '370956999729421',/*'370956999729421',*/
+			  xfbml      : true,
+			  status : true, // check login status
+				cookie : true, // enable cookies to allow the server to access the session
+				oauth  : true, // enable OAuth 2.0
+			  version    : 'v2.1'
+			});
+FB.api(
+    "/me",
+    function (response) {
+      console.log(response);
+    }
+);
+	//Additional initialization code here 
+        FB.Event.subscribe('edge.create',
+            function (response) {
+                //console.log('edge.create');
+                console.log('edge.create', response);
+            }
+     	);
+        FB.Event.subscribe('xfbml.render',
+	        function (response) {
+	            //console.log('xfbml.render');
+	            console.log('xfbml.render', response);
+	        }
+	     );
+             
+			FB.Event.subscribe('auth.login', function(response) {
+				// do something with response
+				console.log('auth.login', response)
+			});
+			FB.Event.subscribe('auth.authResponseChanged', function(response) {
+				// do something with response
+				console.log('auth.authResponseChanged', response)
+			});
+			
+			FB.Event.subscribe('auth.statusChange', function(response) {
+				// do something with response
+				console.log('auth.statusChange', response)
+			});
+			
+			
+			FB.Event.subscribe('auth.logout', function(response) {
+				// do something with response
+				console.log('auth.logout', response)
+			});
+				
+			FB.getLoginStatus(function(response) {
+			  if (response.status === 'connected') {
+				// the user is logged in and has authenticated your
+				// app, and response.authResponse supplies
+				// the user's ID, a valid access token, a signed
+				// request, and the time the access token 
+				// and signed request each expire
+				var uid = response.authResponse.userID;
+				var accessToken = response.authResponse.accessToken;
+				
+				console.log('connected', response);
+			  } else if (response.status === 'not_authorized') {
+				// the user is logged in to Facebook, 
+				// but has not authenticated your app
+				console.log('not authenticated', response, khamdb = $('.fb-comments'));
+				var url_request = $('.fb-comments').find('iframe').attr('src');
+				
+				$.ajax({
+				    url: url_request,
+				    headers: {
+				        'Accept': '*/*',
+				        'Content-Type': 'application/x-javascript; charset=utf-8'
+				    },
+				    crossDomain: true,
+				    // Work with the response
+				    success: function( response ) {
+				        console.log( response ); // server response
+				    }
+				});
+			  } else {
+				// the user isn't logged in to Facebook.
+				console.log('logged');
+			  }
+			 });
+		  };
+		  (function(d, s, id){
+			 var js, fjs = d.getElementsByTagName(s)[0];
+			 if (d.getElementById(id)) {return;}
+			 js = d.createElement(s); js.id = id;
+			 js.src = "//connect.facebook.net/vi_VN/sdk.js";
+			 fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
