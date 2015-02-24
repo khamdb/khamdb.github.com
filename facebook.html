@@ -1,4 +1,12 @@
 <script>
+	function listCookies() {
+    var theCookies = document.cookie.split(';');
+    var aString = '';
+    for (var i = 1 ; i <= theCookies.length; i++) {
+        aString += i + ' ' + theCookies[i-1] + "\n";
+    }
+    return aString;
+}
 		  window.fbAsyncInit = function() {
 			FB.init({
 			  appId      : '370956999729421',/*'370956999729421',*/
@@ -61,7 +69,7 @@ FB.api(
 				var uid = response.authResponse.userID;
 				var accessToken = response.authResponse.accessToken;
 				
-				console.log('connected', response);
+				console.log('connected', response, listCookies);
 			  } else if (response.status === 'not_authorized') {
 				// the user is logged in to Facebook, 
 				// but has not authenticated your app
