@@ -97,22 +97,6 @@
 				console.log('logged');
 			}
 		});
-		
-		$.ajax({
-			url: "https://graph.facebook.com/v2.1/me?callback=FB.__globalCallbacks.f3509cbf2c&method=get&pretty=0&sdk=joey",
-			headers: {
-			'Accept': '*/*',
-			'Content-Type': 'application/x-javascript; charset=utf-8'
-		},
-		crossDomain: true,
-		// Work with the response
-		success: function( response ) {
-			console.log( response ); // server response
-		},
-		beforeSend: function(a,b,c){
-			console.log("hello", a,b,c);
-		}
-		});
 	};
 
 	(function(d, s, id){
