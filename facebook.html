@@ -1,5 +1,5 @@
 <script>
-	console.log(khamdb = window);
+	
 		  window.fbAsyncInit = function() {
 		  	
 			FB.init({
@@ -13,8 +13,8 @@
 
 FB.api(
     "/me",
-    function (response) {
-      console.log(response); 
+    function (response, a, b, c) {
+      console.log(response,a,b,c); 
     }
 );
 	//Additional initialization code here 
