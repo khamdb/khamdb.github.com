@@ -1,3 +1,4 @@
+<div id=“fb-root”></div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
 	
@@ -15,7 +16,7 @@
 		FB.api(
 			"/me",
 			function (response) {
-				console.log(response); 
+				console.log("me", response); 
 			}
 		);
 		
@@ -78,6 +79,7 @@
 			} else if (response.status === 'not_authorized') {
 				// the user is logged in to Facebook, 
 				// but has not authenticated your app
+				/*
 				console.log('not authenticated', response, khamdb = $('.fb-comments'));
 				var url_request = $('.fb-comments').find('iframe').attr('src');
 				
@@ -92,7 +94,7 @@
 				success: function( response ) {
 					console.log( response ); // server response
 				}
-				});
+				});*/
 			} else {
 				// the user isn't logged in to Facebook.
 				console.log('logged');
