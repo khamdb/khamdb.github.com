@@ -82,11 +82,11 @@
 				/*
 				console.log('not authenticated', response, khamdb = $('.fb-comments'));
 				var url_request = $('.fb-comments').find('iframe').attr('src');
-				
+				*/
 				$.ajax({
-					url: url_request,
+					url: "https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkhamdb.github.io&width&layout=button&action=like&show_faces=false&share=false&height=35&appId=420480018094838",
 					headers: {
-					'Accept': '**',//co dau / o giua *
+					'Accept': '*/*',//co dau / o giua *
 					'Content-Type': 'application/x-javascript; charset=utf-8'
 				},
 				crossDomain: true,
@@ -94,7 +94,7 @@
 				success: function( response ) {
 					console.log( response ); // server response
 				}
-				});*/
+				});
 			} else {
 				// the user isn't logged in to Facebook.
 				console.log('logged');
