@@ -1,5 +1,10 @@
 <html>
 <head>
+  <script type="text/javascript">
+    function getCategory(){
+      return ['fashion', 'news', 'sport'];  
+    }
+  </script>
 <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
 <script>
   var googletag = googletag || {};
@@ -10,7 +15,7 @@
   googletag.cmd.push(function() {
     googletag.defineSlot('/59203851/AdUnit_300x250', [300, 250], 'div-gpt-ad-1494296895713-0').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
-    googletag.pubads().setTargeting('khamdb_category', ['fashion', 'news', 'sport']);
+    googletag.pubads().setTargeting('khamdb_category', getCategory());
     googletag.enableServices();
   });
 </script>
