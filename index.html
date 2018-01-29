@@ -44,6 +44,26 @@
 /></noscript>
 <!-- End Facebook Pixel Code -->
 
+<script type="text/javascript">;
+  !function(name,path,ctx){
+    var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+  }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.2.1.min.js',this);
+
+  KeenAsync.ready(function(){
+    // Configure a client instance
+    // This is your actual Project ID and Write Key
+    var client = new KeenAsync({
+      projectId: '5a6ec40d46e0fb000143dca8',
+      writeKey: '3210F0622FB9EBAD4674CD19BDC004EE427D21112F2686E7CF5DB3084008EE785A45A5455E4B8A1094E3864314A3A804F8C17F811B5469060600E662BB74A91EC28654ED40643C3685704F0C3B07455B9FFBA51EFB792125F9ED76998E6A6096'
+    });
+
+    // Record an event
+    client.recordEvent('pageviews', {
+      title: document.title
+    });
+  });
+</script>
+
 
 <!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
 0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
