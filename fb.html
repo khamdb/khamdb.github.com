@@ -7,7 +7,7 @@
     	$.ajaxSetup({ cache: true });
   	$.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
     	FB.init({
-      		appId: '1247278532002909',
+      		appId: '159329361391737',
       		version: 'v2.12' // or v2.1, v2.2, v2.3, ...
     	});     
     	$('#loginbutton,#feedbutton').removeAttr('disabled');
@@ -20,6 +20,29 @@
 
 </head>
 <body>
+
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1247278532002909',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.12'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-customerchat"
+  page_id="782938161800470"
+>
+</div>
+
 	
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
