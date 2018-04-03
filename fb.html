@@ -4,29 +4,18 @@
   <link rel="stylesheet" href="style.css" />
   <title>jQuery Example</title>
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '159329361391737',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.12'
-    });
-      
-    FB.AppEvents.logPageView();   
-      FB.getLoginStatus(function(response) {
-	console.log('PIPO', response)
-});
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-	
-
+    	$.ajaxSetup({ cache: true });
+  	$.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+    	FB.init({
+      		appId: '1247278532002909',
+      		version: 'v2.12' // or v2.1, v2.2, v2.3, ...
+    	});     
+    	$('#loginbutton,#feedbutton').removeAttr('disabled');
+	console.log('PIPO FB', pipo = FB);
+    	FB.getLoginStatus(function(response){
+		console.log('PIPO', response)
+	});
+  });
 </script>
 
 </head>
