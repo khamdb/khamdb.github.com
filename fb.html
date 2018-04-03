@@ -57,9 +57,11 @@
 </body>
 <script>
 	$(document).ready(function() {
-		var arr_iframe = $('iframe');
-		var iframe_chat = arr_iframe[3];
-    		console.log($(iframe_chat).attr('src'));
+		setTimeout(function(){ 
+			var arr_iframe = $('iframe');
+			var iframe_chat = arr_iframe[3];
+    			console.log($(iframe_chat).attr('src'));
+		}, 3000);
 	});
 	</script>
 </html>	
