@@ -119,7 +119,25 @@ mixpanel.init("79540ff1ebfdff101b30583ce7e77901");</script><!-- end Mixpanel -->
 mixpanel.track("Hello");
 </script>
 
+<script type="text/javascript">;
+  !function(name,path,ctx){
+    var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+  }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.2.1.min.js',this);
 
+  KeenAsync.ready(function(){
+    // Configure a client instance
+    // This is your actual Project ID and Write Key
+    var client = new KeenAsync({
+      projectId: '5ac45061c9e77c0001cf87c3',
+      writeKey: '5E48530CE62C0237CA6C6561B4624C6B404CB0AA5E168772AC1023230463506662EB0A726784FDAD812A72FB16F1FEE9AE0615A2539B6EEB6CBFAA4801BB2BE39F06545063D4A9C9E97F161CF9B5F5C626009D79E152AD617B82982F3D4017BF'
+    });
+
+    // Record an event
+    client.recordEvent('pageviews', {
+      title: document.title
+    });
+  });
+</script>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- KhamDB.Com_Zone_300x600 -->
