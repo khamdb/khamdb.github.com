@@ -2,7 +2,7 @@
 <script src="https://zjs.zdn.vn/zalo/sdk.js"></script>
 
 <script>
-   /*
+   
    // Init and setup SDK
    Zalo.init({
        version: '2.0',
@@ -10,7 +10,7 @@
        redirectUrl: 'http://khamdb.com/zl.html'
      }
    );
-   */
+   
    Zalo.getLoginStatus(function(response) {
      if (response.status === 'connected') {
        Zalo.api('/me',
