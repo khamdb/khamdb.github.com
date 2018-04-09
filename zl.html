@@ -1,4 +1,25 @@
 
+<script src="https://zjs.zdn.vn/zalo/sdk.js"></script>
+
+<script>
+// Init and setup SDK
+   Zalo.init({
+       version: '2.0',
+       appId: '3005071761980069826',
+       redirectUrl: 'http://khamdb.com/zl.html'
+     }
+   );
+  
+   Zalo.api('/me',
+    'GET',
+    {
+      fields: 'id, name, birthday, picture, gender'
+    },
+    function (response) {
+       console.log('my information: ', response);
+    }
+  );
+</script>
 
 <div class="zalo-chat-widget" data-oaid="3990336270322764486" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div>
 
