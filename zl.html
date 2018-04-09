@@ -2,6 +2,7 @@
 <script src="https://zjs.zdn.vn/zalo/sdk.js"></script>
 
 <script>
+   /*
    // Init and setup SDK
    Zalo.init({
        version: '2.0',
@@ -9,7 +10,7 @@
        redirectUrl: 'http://khamdb.com/zl.html'
      }
    );
-   
+   */
    Zalo.getLoginStatus(function(response) {
      if (response.status === 'connected') {
        Zalo.api('/me',
@@ -22,10 +23,11 @@
          }
        );
      } else {
-       Zalo.login();
+       console.log('login now');
+       //Zalo.login();
      }
    });
-   
+   /*
    Zalo.api('/me',
     'GET',
     {
@@ -35,6 +37,7 @@
        console.log('my information: ', response);
     }
   );
+  */
 </script>
 
 <div class="zalo-chat-widget" data-oaid="3990336270322764486" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div>
