@@ -13,12 +13,12 @@
     	});     
     	$('#loginbutton,#feedbutton').removeAttr('disabled');
 		
-	setTimeout(function(){ 
+
 		console.log('PIPO FB', pipo = FB);
 		FB.getLoginStatus(function(response){
 			console.log('PIPO', response)
 		});
-	}, 1000);
+
 	
   });
   </script>
@@ -32,12 +32,12 @@
     	});     
     	$('#loginbutton,#feedbutton').removeAttr('disabled');
 		
-	setTimeout(function(){ 
+
 		console.log('PONG FB', pong = FB);
     		FB.getLoginStatus(function(response){
 			console.log('PONG', response)
 		});
-	}, 1000);
+
 	
   });
   </script>
