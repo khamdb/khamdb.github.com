@@ -12,10 +12,14 @@
       		version: 'v2.12' // or v2.1, v2.2, v2.3, ...
     	});     
     	$('#loginbutton,#feedbutton').removeAttr('disabled');
-	console.log('PIPO FB', pipo = FB);
-    	FB.getLoginStatus(function(response){
-		console.log('PIPO', response)
-	});
+		
+	setTimeout(function(){ 
+		console.log('PIPO FB', pipo = FB);
+		FB.getLoginStatus(function(response){
+			console.log('PIPO', response)
+		});
+	}, 1000);
+	
   });
   </script>
 	
@@ -27,10 +31,14 @@
       		version: 'v2.12' // or v2.1, v2.2, v2.3, ...
     	});     
     	$('#loginbutton,#feedbutton').removeAttr('disabled');
-	console.log('PONG FB', pong = FB);
-    	FB.getLoginStatus(function(response){
-		console.log('PONG', response)
-	});
+		
+	setTimeout(function(){ 
+		console.log('PONG FB', pong = FB);
+    		FB.getLoginStatus(function(response){
+			console.log('PONG', response)
+		});
+	}, 1000);
+	
   });
   </script>
 	
