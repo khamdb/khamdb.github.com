@@ -78,6 +78,26 @@ gtag('event', 'purchase', {
     }
   ]
 });  
+  
+fbq('track', 'Purchase',
+  // begin parameter object data
+  {
+    value: 115.00,
+    currency: 'USD',
+    contents: [
+      {
+        id: '301',
+        quantity: 1
+      },
+      {
+        id: '401',
+        quantity: 2
+      }],
+    content_type: 'product',
+    is_first_purchase: 1
+  }
+  // end parameter object data
+);
 </script>
 </body>
 </html>
