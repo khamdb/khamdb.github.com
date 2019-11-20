@@ -44,8 +44,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <script>
 gtag('set', {
-  "seller_product_list": {
-    "items": [
+  "transaction_id": 24.031608523954162
+});
+gtag('set', {
+  "is_first_purchase": 1
+});
+gtag('set', {
+  "seller_product_list": 
+   [
       {
         "id": "P12345",
         "name": "Android Warhol T-Shirt",
@@ -68,10 +74,9 @@ gtag('set', {
         "quantity": 1,
         "price": "3.0"
       }
-    ],
-    "dimension1": 1
-  }
+    ]
 });
+  
 gtag('event', 'purchase', {
   "transaction_id": "24.031608523954162",
   "affiliation": "Google online store",
@@ -83,6 +88,28 @@ gtag('event', 'purchase', {
   "dimension2": 10,
   "metric1": 5,
   "metric2": 7
+  "items":[{
+        "id": "P12345",
+        "name": "Android Warhol T-Shirt",
+        "list_name": "Search Results",
+        "brand": "Google",
+        "category": "Apparel/T-Shirts",
+        "variant": "Black",
+        "list_position": 1,
+        "quantity": 2,
+        "price": "2.0"
+      },
+      {
+        "id": "P67890",
+        "name": "Flame challenge TShirt",
+        "list_name": "Search Results",
+        "brand": "MyBrand",
+        "category": "Apparel/T-Shirts",
+        "variant": "Red",
+        "list_position": 2,
+        "quantity": 1,
+        "price": "3.0"
+      }]
 });  
   
 fbq('track', 'Purchase',
