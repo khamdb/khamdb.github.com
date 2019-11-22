@@ -58,7 +58,13 @@ gtag('set', {
 			{id: "productid456", price: "100.00", quantity: 4},
 		]
 });
-  
+	
+gtag('event', 'purchase', {
+  'event_category': 'activations',
+  'event_label': 'first_purchase',
+  'value': 1
+});
+	
 gtag('event', 'purchase', {
   "transaction_id": "24.031608523954162",
   "affiliation": "Google online store",
