@@ -11,6 +11,13 @@
     });
       
     FB.AppEvents.logPageView();   
+    
+    var params = {};
+    params['pa1'] = 'va1';
+    params['pa2'] = 'va2';
+    params['pa3'] = 'va3';
+	  
+    FB.AppEvents.logEvent('is_first_purchase', null, params);
       
   };
 
@@ -168,22 +175,6 @@ gtag('event', 'conversion', {
 	'currency': 'VND',
 	'transaction_id': ''
 });
-
-/**
- * This function will log is_first_purchase App Event
- * @param {string} pa1
- * @param {string} pa2
- * @param {string} pa3
- */
-function logIs_first_purchaseEvent(pa1, pa2, pa3) {
-    var params = {};
-    params['pa1'] = pa1;
-    params['pa2'] = pa2;
-    params['pa3'] = pa3;
-    FB.AppEvents.logEvent('is_first_purchase', null, params);
-}
-
-logIs_first_purchaseEvent('va1','va2','va3');
 
 </script>
 </body>
