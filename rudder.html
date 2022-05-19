@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>Demo Rudder</title>
+	<meta property="og:image" content="//st.khamdb.com/logo.png">
+	<meta property="og:title" content="Demo Rudder | KhamDB">
+	<meta property="og:url" content="//khamdb.github.io">
+	<meta property="og:description" content="Demo Rudder">
+
+	<script>
+    rudderanalytics = window.rudderanalytics = [];
+
+    var methods = [
+      "load",
+      "page",
+      "track",
+      "identify",
+      "alias",
+      "group",
+      "ready",
+      "reset",
+      "getAnonymousId",
+      "setAnonymousId",
+    ];
+
+    for (var i = 0; i < methods.length; i++) {
+      var method = methods[i];
+      rudderanalytics[method] = (function (methodName) {
+        return function () {
+          rudderanalytics.push(
+            [methodName].concat(Array.prototype.slice.call(arguments))
+          );
+        };
+      })(method);
+    }
+    
+    rudderanalytics.load("4fe21d9dddc86934716174f3bb1886ef", "//l.khamdb.com");
+    rudderanalytics.page();
+  </script>
+
+  <script src="//st.khamdb.com/js/rudder-analytics.min.js"></script>
+</head>
+<body>
+	Demo Rudder
+</body>
+</html>
