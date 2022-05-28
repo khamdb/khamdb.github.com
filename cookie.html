@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Demo Cookie</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="//st.khamdb.com/js/sdk.js"></script>
+</head>
+<body>
+<h1>Hi</h1>
+
+<iframe src="//tracking.khamdb.com/debug" height="1" width="1" scrolling="no" frameborder="0" style="display:none" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<script type="text/javascript">
+// Example of use:
+//secure: false, domain: '.khamdb.com', path: '/', httponly: false, samesite: 'strict'
+setCookie('_testjs1', 'valuejs1', {'max-age': 3600, domain: '.khamdb.com', path: '/'});
+setCookie('_testjs2', 'valuejs2', {'max-age': 3600, domain: 'debug.khamdb.com', path: '/'});
+//domain: 'debug.khamdb.com', path: '/', httponly: true, samesite: 'strict'
+setCookie('_testjs3', 'valuejs3', {'expires': 3600, domain: 'debug.khamdb.com', path: '/'});
+setCookie('_testjs4', 'valuejs4', {'expires': 3600, domain: '.khamdb.com', path: '/'});
+//
+setCookie('_tk_id3', 'tkvalue3', {'max-age': 3600, domain: 'tracking.khamdb.com', path: '/'});
+
+//
+console.log(getCookie('_testjs1'));
+console.log(getCookie('_testjs2'));
+console.log(getCookie('_testjs3'));
+
+$(document).ready(function() {
+  $.ajax(
+    '//tracking.khamdb.com/test',
+    {
+        crossDomain: true,
+        success: function(data) {
+          console.log(data)
+        },
+        error: function(err) {
+          console.log(err)
+        }
+     }
+  );
+});
+
+</script>
+</body>
+</html>
