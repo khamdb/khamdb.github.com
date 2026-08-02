@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Leaflet Demo</title>
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+}
+
+#toolbar{
+    padding:10px;
+    background:#f4f4f4;
+}
+
+#map{
+    width:100%;
+    height:90vh;
+}
+
+input{
+    width:350px;
+    padding:8px;
+}
+
+button{
+    padding:8px 15px;
+}
+
+#status{
+    color:red;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="toolbar">
+
+<input
+id="address"
+placeholder="Nhập địa chỉ...">
+
+<button onclick="searchAddress()">
+Tìm
+</button>
+
+<span id="status"></span>
+
+</div>
+
+<div id="map"></div>
+
+<script>
+
+let map=L.map('map').setView([10.7769,106.7009],13);
+
+L.tileLayer(
+'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+{
+maxZoom:19
+}).addTo(map);
+
+let circle=null;
+let centerMarker=null;
+let userMarker=null;
+let watchId=null;
+
+let targetLatLng=null;
+
+async function searchAddress(){
+
+let addr=document.getElementById("address").value;
+
+if(addr=="") return;
+
+let url=
+`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(addr)}`;
+
+let res=await fetch(url);
+
+let data=await res.json();
+
+if(data.length==0){
+
+alert("Không tìm thấy");
+
+return;
+
+}
+
+let lat=parseFloat(data[0].lat);
+let lon=parseFloat(data[0].lon);
+
+targetLatLng=L.latLng(lat,lon);
+
+if(circle) map.removeLayer(circle);
+if(centerMarker) map.removeLayer(centerMarker);
+
+centerMarker=L.marker(targetLatLng).addTo(map);
+
+circle=L.circle(targetLatLng,{
+radius:3000,
+color:"red",
+fillColor:"#ff6666",
+fillOpacity:0.2
+}).addTo(map);
+
+map.setView(targetLatLng,14);
+
+}
+
+function startTracking(){
+
+if(!navigator.geolocation){
+
+alert("Không hỗ trợ GPS");
+
+return;
+
+}
+
+watchId=navigator.geolocation.watchPosition(
+
+position=>{
+
+let lat=position.coords.latitude;
+let lon=position.coords.longitude;
+
+let user=L.latLng(lat,lon);
+
+if(userMarker==null){
+
+userMarker=L.marker(user).addTo(map);
+
+}else{
+
+userMarker.setLatLng(user);
+
+}
+
+if(targetLatLng){
+
+let d=map.distance(user,targetLatLng);
+
+let remain=d-3000;
+
+document.getElementById("status").innerHTML=
+"Cách vòng tròn: "+Math.max(0,remain).toFixed(0)+" m";
+
+if(remain<500 && remain>0){
+
+alert("Bạn sắp tới vùng bán kính 3 km!");
+
+}
+
+if(remain<=0){
+
+alert("Bạn đã vào vùng 3 km");
+
+}
+
+}
+
+},
+err=>{
+console.log(err);
+},
+{
+enableHighAccuracy:true,
+maximumAge:0,
+timeout:5000
+}
+
+);
+
+}
+
+startTracking();
+
+</script>
+
+</body>
+</html>
