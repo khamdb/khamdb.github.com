@@ -1,0 +1,21 @@
+KỊCH BẢN THU ÂM CHÚ HỀ
+Mỗi dòng là một file mp3 đặt trong thư mục này (amthanh/chuhe/). Thiếu file nào thì máy tự đọc dòng đó bằng giọng tiếng Việt có sẵn.
+Chỉ cần thu đúng nội dung câu, không cần chừa khoảng lặng dài ở đầu hoặc cuối file (game tự chờ file đọc xong mới chuyển bước).
+
+doan1.mp3 | Xin chào các bạn! Mình là chú hề vui tính!
+doan2.mp3 | Hôm nay mình làm ảo thuật cho các bạn xem nhé!
+doan3.mp3 | Đây là một bông hoa xinh đẹp!
+doan4.mp3 | Các bé đoán xem, bông hoa sẽ biến thành gì nào?
+doan5.mp3 | Một, hai, ba, biến!
+doan6.mp3 | Ồ! Hoa biến thành chú chim rồi!
+doan7.mp3 | Chim ơi, bay đi nhé!
+doan8.mp3 | Bây giờ chúng mình chơi trò đoán mũ nhé!
+doan9.mp3 | Chơi tiếp nào! Lần này nhanh hơn một chút đó!
+doan10.mp3 | Các bạn nhìn kỹ nhé, đây là đồ vật chú hề sẽ giấu!
+doan11.mp3 | Bây giờ chú hề giấu đồ vật vào một cái mũ!
+doan12.mp3 | Chú hề sẽ đổi chỗ các mũ. Nhìn thật kỹ nhé!
+doan13.mp3 | Đồ vật nằm trong cái mũ nào nhỉ? Các bạn cùng nhau đoán nhé!
+doan14.mp3 | Đúng rồi! Các bạn giỏi quá!
+doan15.mp3 | Ồ, không có gì cả! Các bạn thử mũ khác nhé!
+doan16.mp3 | Chưa đúng rồi! Chỉ còn một mũ nữa thôi!
+doan17.mp3 | Chú hề cảm ơn các bạn nhiều lắm! Hẹn gặp lại nhé!
